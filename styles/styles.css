@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:wght@500&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+}
+
+section {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(198, 198, 198);
+}
+section:last-of-type {
+  background-color: rgb(95, 95, 95) !important;
+}
+
+.mini {
+  opacity: 0;
+  position: absolute;
+}
+
+.full {
+  opacity: 100;
+}
+
+header {
+  height: 100px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.474);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2%;
+  align-items: center;
+  transition: height 0.2s;
+}
+header img {
+  height: 80%;
+  transition: opacity 0.2s;
+}
+
+.headerMini {
+  height: 50px;
+}
+.headerMini .full {
+  opacity: 0;
+}
+.headerMini .mini {
+  opacity: 100;
+}
+.headerMini ul li a {
+  font-size: 1.1rem !important;
+}
+.headerMini .headerNav {
+  width: 25%;
+}
+
+.headerNav {
+  width: 35%;
+  transition: width 0.2s;
+}
+.headerNav ul {
+  display: flex;
+  justify-content: space-around;
+}
+.headerNav ul li {
+  list-style-type: none;
+}
+.headerNav ul li a {
+  transition: font-size 0.2s, color 0.2s;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  font-family: "Montserrat", serif;
+}
+.headerNav ul li a:hover {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/*# sourceMappingURL=styles.css.map */
