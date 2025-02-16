@@ -5,7 +5,7 @@ const header = document.querySelector("header");
 function pageHeight(){
     height = window.scrollY;
     console.log(height);
-    if (height >= 200) {
+    if (height >= 100) {
         header.classList.add("headerMini");
     } else {
         header.classList.remove("headerMini");
@@ -43,3 +43,5 @@ function triggerResBars() {
     }
     document.getElementsByClassName("headerNav")[0].classList.toggle("headerNavActive");
 }
+
+console.log("up!");

@@ -10,27 +10,24 @@ header {
   justify-content: space-between;
   padding: 0 2%;
   align-items: center;
-  transition: min-height 0.2s;
+  transition: height 0.2s;
 }
 
 .headerNav {
   grid-area: nav;
   transition: max-height 0.3s, padding 0.3s;
-  display: flex;
-  justify-content: flex-end;
 }
 .headerNav ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   width: 100%;
   list-style: none;
-  transition: width 0.2s;
 }
 .headerNav ul li a {
   text-decoration: none;
   color: white;
   font-size: 1.2rem;
-  transition: color 0.2s, font-size 0.2s;
+  transition: color 0.2s;
 }
 .headerNav ul li a:hover {
   color: rgba(255, 255, 255, 0.5);
@@ -38,21 +35,20 @@ header {
 
 .logoNav {
   grid-area: logo;
+  height: 80px;
   display: flex;
   align-items: center;
 }
 
 .mini {
+  display: none;
   opacity: 0;
-  height: 30px;
-  transition: opacity 0.2s;
-  position: absolute;
+  height: 50%;
 }
 
 .full {
   opacity: 100;
-  height: 60px;
-  transition: opacity 0.2s, transform 0.2s;
+  height: 100%;
 }
 
 #menuToggle {
@@ -89,33 +85,20 @@ header {
   height: 20px;
 }
 .headerMini .mini {
+  display: block;
   opacity: 100%;
 }
 .headerMini .full {
-  opacity: 0;
-  transform: scale(0.5) translateX(-100px);
-}
-.headerMini .headerNav ul {
-  width: 60%;
-}
-.headerMini .headerNav ul li a {
-  font-size: 0.9rem;
+  display: none;
 }
 
 @media (max-width: 1200px) {
   header {
     grid-template-columns: 1fr 1fr;
   }
-  .headerMini .headerNav ul {
-    width: 90%;
-  }
-  .headerMini .headerNav ul li a {
-    font-size: 1rem;
-  }
 }
 @media (max-width: 680px) {
   header {
-    min-height: 70px;
     grid-template-columns: 1fr;
     grid-template: "logo burger" "nav nav";
     padding: 0 5%;
@@ -140,75 +123,19 @@ header {
   }
   header .logoNav {
     justify-self: center;
-    height: 50px;
   }
 }
-.filler {
-  height: 100px;
-  width: 100%;
-  background-color: rgb(0, 0, 0);
-}
-
 main {
   height: 100vh;
-  display: grid;
-  grid-template: "options products cart";
-  grid-template-columns: 1fr 3fr 1fr;
-  padding: 0 5%;
 }
 
-#sideNavContainer {
-  grid-area: options;
-}
-#sideNavContainer li {
-  list-style-type: none;
-}
-
-.sides {
-  height: 80vh;
-  display: flex;
-  align-items: center;
-}
-
-.stickySide {
-  position: fixed;
-  background-color: rgba(0, 0, 0, 0.13);
-  padding: 20px;
-  border-radius: 15px;
-}
-.stickySide hr {
-  border: solid 1px rgb(187, 187, 187);
-}
-
-.gray {
-  color: rgb(187, 187, 187);
-  border-color: rgb(187, 187, 187);
-}
-
-.italics {
-  font-style: italic;
-}
-
-#announce {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
+section {
+  height: 100%;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.39);
+  background-color: rgb(198, 198, 198);
 }
-
-.right {
-  text-align: right;
-}
-
-#cartList {
-  display: flex;
-  text-align: center;
-  padding: 2%;
-  max-height: 500px;
-  overflow: auto;
-  max-width: 350px;
+section:last-of-type {
+  background-color: rgb(95, 95, 95) !important;
 }
 
 * {
@@ -225,4 +152,4 @@ p, a, h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", serif;
 }
 
-/*# sourceMappingURL=styles.css.map */
+/*# sourceMappingURL=styles.cs.map */
