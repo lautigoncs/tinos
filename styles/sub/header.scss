@@ -157,6 +157,16 @@ header {
             height: 50px;
         }
     }
+    .headerMini {
+        // keep it the same
+        .headerNav {
+            ul{
+                width: 100%;
+                li{a{
+                    font-size: 1.2rem;
+            }}}
+        }
+    }
 }
 
 

@@ -35,25 +35,50 @@
     <!---->
     <main>
         <section id="sideNavContainer" class="sides">
-            <ul class="stickySide">
-                <a href="#"><li>burgas</li></a>
-                <a href="#"><li>papas nose</li></a>
-                <a href="#"><li>bebida</li></a>
+            <ul class="stickySide sideNav">
+                <a href="#" class="textHover"><li>Promos</li></a>
+                <a href="#" class="textHover"><li>Burgers</li></a>
+                <a href="#" class="textHover"><li>Papas</li></a>
+                <a href="#" class="textHover"><li>Drinks</li></a>
             </ul>
         </section>
-        <section>
-            <p>cosas</p>
+        <section id="mainProductsContainer">
+            <div class="cardContainer">
+                <img src="../assets/placeholder.png" alt="placeholder">
+                <div class="cardContent">
+                    <div class="cardText">
+                        <h2>Burga loca</h2>
+                        <p>Una burga de la reconcha de su hermana mal</p>
+                        <p class="gray">$20.000</p>
+                    </div>
+                    <button class="button" onclick="addToCart(1)">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="cardContainer">
+                <img src="../assets/placeholder.png" alt="placeholder">
+                <div class="cardContent">
+                    <div class="cardText">
+                        <h2>Burga la mas loca</h2>
+                        <p>Una burga de la reconcha de su hermana mal pero esta esta RE loca </p>
+                        <p class="gray">$200.000</p>
+                    </div>
+                    <button class="button" onclick="addToCart(2)">Agregar al carrito</button>
+                </div>
+            </div>
         </section>
         <section id="cartContainer" class="sides">
             <div class="stickySide">
                 <p class="italics gray right">Carrito</p>
                 <hr>
                 <div id="cartList">
-                    <p class="gray"> Actualmente, el carrito se encuentra vacio</p>
+                    <!-- <p class="gray"> Actualmente, el carrito se encuentra vacio</p> -->
                 </div>
+                <button class="button">Realizar pedido</button>
             </div>
         </section>
     </main>
     <script src="js/header.js" defer></script>
+    <script src="js/cart.js"></script>
+    <a href="pages/cardtest.html">card test</a>
 </body>
 </html>

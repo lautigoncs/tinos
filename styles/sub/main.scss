@@ -9,29 +9,52 @@ main {
 
 #sideNavContainer {
     grid-area: options;
+    a{
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
     li {
         list-style-type: none;
+        color: black;
     }
 }
 
 #cartContainer {
-
-    
+    grid-area: cart;
+    max-width: 100%;
 }
 
 .sides {
     height: 80vh;
     display: flex;
     align-items: center;
+    justify-content: center;
+}
+
+.sideNav {
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 .stickySide{
-    position: fixed;
+    // position: fixed;
     background-color:rgba(0, 0, 0, 0.13);
     padding: 20px;
     border-radius: 15px;
     hr {
         border: solid 1px rgb(187, 187, 187);
+    }
+}
+
+.textHover {
+    transition: transform 0.1s;
+    &:hover {
+        transform: scale(105%);
+    }
+    &:active {
+        transform: scale(98%);
     }
 }
 
@@ -68,9 +91,14 @@ main {
 
 #cartList {
     display: flex;
+    flex-direction: column;
     text-align: center;
     padding: 2%;
     max-height: 500px;
     overflow: auto;
-    max-width: 350px;
+    max-width: 310px;
+}
+
+#mainProductsContainer {
+    padding: 10% 5%;
 }

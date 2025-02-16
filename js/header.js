@@ -4,7 +4,7 @@ const header = document.querySelector("header");
 
 function pageHeight(){
     height = window.scrollY;
-    console.log(height);
+    // console.log(height);
     if (height >= 100) {
         header.classList.add("headerMini");
     } else {
@@ -19,7 +19,7 @@ function triggerResBars() {
     const bars = Array.from(menu.getElementsByTagName("div"));
     if (i==0) {
         bars.forEach(bar => {
-            console.log(i);
+            // console.log(i);
             if(i==1) {
                 bar.style.opacity = "0";
                 i++;
@@ -44,4 +44,4 @@ function triggerResBars() {
     document.getElementsByClassName("headerNav")[0].classList.toggle("headerNavActive");
 }
 
-console.log("up!");
+// console.log("up!");

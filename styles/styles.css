@@ -142,6 +142,12 @@ header {
     justify-self: center;
     height: 50px;
   }
+  .headerMini .headerNav ul {
+    width: 100%;
+  }
+  .headerMini .headerNav ul li a {
+    font-size: 1.2rem;
+  }
 }
 .filler {
   height: 100px;
@@ -160,24 +166,51 @@ main {
 #sideNavContainer {
   grid-area: options;
 }
+#sideNavContainer a {
+  text-decoration: none;
+  font-size: 1.2rem;
+}
 #sideNavContainer li {
   list-style-type: none;
+  color: black;
+}
+
+#cartContainer {
+  grid-area: cart;
+  max-width: 100%;
 }
 
 .sides {
   height: 80vh;
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.sideNav {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .stickySide {
-  position: fixed;
   background-color: rgba(0, 0, 0, 0.13);
   padding: 20px;
   border-radius: 15px;
 }
 .stickySide hr {
   border: solid 1px rgb(187, 187, 187);
+}
+
+.textHover {
+  transition: transform 0.1s;
+}
+.textHover:hover {
+  transform: scale(105%);
+}
+.textHover:active {
+  transform: scale(98%);
 }
 
 .gray {
@@ -204,11 +237,53 @@ main {
 
 #cartList {
   display: flex;
+  flex-direction: column;
   text-align: center;
   padding: 2%;
   max-height: 500px;
   overflow: auto;
-  max-width: 350px;
+  max-width: 310px;
+}
+
+#mainProductsContainer {
+  padding: 10% 5%;
+}
+
+.cardContainer {
+  display: grid;
+  grid-template: "img cont";
+  grid-template-columns: 1fr 2fr;
+  justify-content: center;
+  margin-bottom: 20px;
+  padding: 0;
+  height: 150px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.cardContainer img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  grid-area: img;
+  border-radius: 5px 0 0 5px;
+}
+
+.cardContent {
+  grid-area: cont;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardText {
+  padding: 2%;
+  width: 300px;
+}
+
+.cardCart .cartContent .cardText {
+  font-size: 2px !important;
 }
 
 * {
@@ -223,6 +298,22 @@ body {
 
 p, a, h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", serif;
+}
+
+.button {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.0823529412);
+  color: #333;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.button:hover {
+  background-color: #333;
+  color: #f5f5f5;
 }
 
 /*# sourceMappingURL=styles.css.map */
