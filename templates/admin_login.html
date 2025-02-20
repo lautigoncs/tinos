@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TINOS - ADMIN PAGE - LOGIN</title>
+    <link rel="stylesheet" type="text/css" href="static/styles/styles.css">
+</head>
+<body>
+    <h1>hola romi... o allegado a romi... o glottar o pica</h1>
+    <p>si no sos ninguno de estos, andate</p>
+    <form action="/adminCheck" method="POST">
+        <input type="password" name="password" id="password" placeholder="password">
+        <button type="submit">login</button>
+    </form>
+    {% if param.get("error_msg_login") %}
+    <p>{{ param.get("error_msg_login") }}</p>
+    {% endif %}
+</body>
+</html>

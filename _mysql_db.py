@@ -1,5 +1,6 @@
 
 import mysql.connector
+from appConfig import *
 ############################################################################
 ################### FUNCIONES PRINCIPALES ####################################
 def conectarBD(configDB=None):
@@ -139,18 +140,3 @@ def deleteDB(configDB=None,sql="",val=None):
     return res
 
 ############################################################################ 
-
-
-########################################################################## 
-## CONFIGURACION DE LA CONEXION A LA BASE DE DATOS
-## DICCIONARIO con los datos de la conexión
-## Nota: Sería una buena práctica colocar este diccionario con los datos 
-##       de la conexion en el archivo de configuración de la app
-## - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
-
-BASE={ "host":"localhost",
-        "user":"root",
-        "pass":"",
-        "dbname":"tinos"}
-
-############################################################################

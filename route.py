@@ -12,7 +12,7 @@ def route(app):
     @app.route("/onlyfans")
     def onlyfans():
         param={}
-        return adminPag(param)
+        return adminLoginPag(param)
     
     @app.route("/adminCheck", methods =["GET", "POST"])
     def adminCheck():
@@ -27,7 +27,7 @@ def route(app):
     @app.route("/closeAdminSession")
     def closeAdminSession():
         session['admin'] = False
-        return redirect('/')
+        return redirect('/onlyfans')
 
     @app.route("/createProduct", methods =["GET", "POST"])
     def createProduct():

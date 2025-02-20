@@ -5,16 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TINOS - ADMIN PAGE - LOGIN</title>
     <link rel="stylesheet" type="text/css" href="static/styles/styles.css">
+    <style>
+        div {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+        .buttondel {
+            padding: 20px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <h1>hola romi... o allegado a romi... o glottar o pica</h1>
-    <p>si no sos ninguno de estos, andate</p>
-    <form action="/adminCheck" method="POST">
-        <input type="password" name="password" id="password" placeholder="password">
-        <button type="submit">login</button>
-    </form>
-    {% if param.get("error_msg_login") %}
-    <p>{{ param.get("error_msg_login") }}</p>
-    {% endif %}
-</body>
+    <p>menos mal que eras vos pq estaba ansioso</p>
+    <p>no me hagas esperar tanto</p>
+    <p>te amo</p>
+    <a href="/closeAdminSession">CERRAR SESIÓN DE ADMINISTRADOR!</a>
+    <hr>
+    <DIV>
+        <h1>CREAR PRODUCTO NUEVO</h1>
+        <form action="/createProduct" method="POST">
+            <input type="text" name="nombre" placeholder="Nombre del producto">
+            <input type="text" name="descripcion" placeholder="Descripción del producto">
+            <input type="text" name="precio" placeholder="Precio del producto">
+            <input type="file" name="imagen" accept="image/*">
+            <!-- <input type="text" name="category" placeholder="Categoría del producto"> -->
+            <input type="submit" value="Crear producto">
+        </form>
+    </DIV>
+    <hr>
+    <div>
+        <h1>ADMINISTRAR PRODUCTOS EN EXISTENCIA</h1>
+        <section>
+            {% for producto in productos %}
+            <div>
+                <h2>{{producto[1]}}</h2>
+                <p>{{producto[2]}}</p>
+                <p>${{producto[3]}}</p>
+                <img src="{{ producto[4] }}" alt="{{ producto[1] }}">
+                <br>
+                <a href="/editProduct/{{ producto[0] }}">Editar producto</a>
+                <br>
+                <button type="checkbox" id="check{{ producto[0] }}" name="check{{ producto[0] }}" onclick="habilitarDelete({{producto[0]}})" class="buttondel">SI TOCAS ESTO SE BORRA</button>
+                <a href="/deleteProduct?id={{ producto[0] }}" id="hola{{producto[0]}}" style="display: none;">MENTIRA AHORA SI ULTIMA OPORTUNIDAD</a>
+            </div>
+            {% endfor %}
+            </section>
+        </div>
+    </body>
+            <script>
+                function habilitarDelete(id) {
+                    var deleteLink = document.getElementById(`hola${id}`);
+                    deleteLink.style.display = "block";
+                }
+            </script>
 </html>

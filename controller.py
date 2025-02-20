@@ -74,11 +74,10 @@ def homePag():
     base = selectDB(BASE,"select * from productos;")
     return render_template('index.html', base=base)
 
-def adminPag(param):
+def adminLoginPag(param):
     if session.get('admin'):
         return redirect('/onlyfans_admin')
-    # base = selectDB(BASE,"select * from productos;")
-    return render_template('admin.html',param=param)
+    return render_template('admin_login.html', param=param)
  
 def checkAdminPassword(param, request):
     miRequest={}
@@ -88,19 +87,19 @@ def checkAdminPassword(param, request):
         return redirect('/onlyfans_admin')
     else:
         param['error_msg_login']="Error: Contraseña incorrecta"
-        return adminPag(param)
+        return adminLoginPag(param)
 
 def adminPagOrg(param):
     if session.get('admin'):
         productos = selectDB(BASE,"select * from productos;")
-        return render_template('admin_org.html',param=param, productos=productos)
+        return render_template('admin.html',param=param, productos=productos)
     else:
         return redirect('/onlyfans')
 
 def createProductAlg(request):
     miRequest={}
     getRequet(miRequest)
-    insertDB(BASE,"insert into productos (id, name, descriptio, price, image) values (NULL, '{}', '{}', '{}', NULL);".format(miRequest.get('nombre'), miRequest.get('precio'), miRequest.get('descripcion')))
+    insertDB(BASE,"insert into productos (id, name, descriptio, price, image) values (NULL, '{}', '{}', '{}', 'hola');".format(miRequest.get('nombre'), miRequest.get('precio'), miRequest.get('descripcion')))
     return redirect('/onlyfans_admin')
 
 def deleteProductAlg(request):
@@ -112,3 +111,8 @@ def deleteProductAlg(request):
 
 def notFound(name):
     return render_template('404.html',name=name)
+
+BASE={ "host":"database-1.cbqsyomsicfl.sa-east-1.rds.amazonaws.com",
+        "user":"admin",
+        "pass":"romasurdo123",
+        "dbname":"Tinos"}
