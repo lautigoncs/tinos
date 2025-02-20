@@ -45,7 +45,7 @@
                 <p>${{producto[3]}}</p>
                 <img src="{{ producto[4] }}" alt="{{ producto[1] }}">
                 <br>
-                <a href="/editProduct/{{ producto[0] }}">Editar producto</a>
+                <a href="/editProduct?id={{ producto[0] }}">Editar producto</a>
                 <br>
                 <button type="checkbox" id="check{{ producto[0] }}" name="check{{ producto[0] }}" onclick="habilitarDelete({{producto[0]}})" class="buttondel">SI TOCAS ESTO SE BORRA</button>
                 <a href="/deleteProduct?id={{ producto[0] }}" id="hola{{producto[0]}}" style="display: none;">MENTIRA AHORA SI ULTIMA OPORTUNIDAD</a>

@@ -69,6 +69,9 @@ def upload_file (diResult) :
 #  P Á G I N A S
 ##########################################################################
 
+def notFound(name):
+    return render_template('404.html',name=name)
+
 def homePag(): 
     # Agarramos los productos de la base de datos, y los guardarmos en una lista 
     base = selectDB(BASE,"select * from productos;")
@@ -109,10 +112,28 @@ def deleteProductAlg(request):
     insertDB(BASE,"delete from productos where id = {};".format(miRequest.get('id')))
     return redirect('/onlyfans_admin')
 
-def notFound(name):
-    return render_template('404.html',name=name)
+def editProductPage(request):
+    miRequest={}
+    getRequet(miRequest)
+    producto = selectDB(BASE,"select * from productos where id = {};".format(miRequest.get('id')))
+    producto = producto[0]
+    return render_template('edit_product.html', producto=producto)	
 
-BASE={ "host":"database-1.cbqsyomsicfl.sa-east-1.rds.amazonaws.com",
-        "user":"admin",
-        "pass":"romasurdo123",
-        "dbname":"Tinos"}
+def editProductLog(request):
+    miRequest={}
+    getRequet(miRequest)
+    insertDB(BASE,"update productos set name = '{}', price = '{}', descriptio = '{}' where id = {};".format(miRequest.get('nombre'), miRequest.get('precio'), miRequest.get('descripcion'), miRequest.get('id')))
+    return redirect('/onlyfans_admin')
+
+def updatePhoto(request):
+    miRequest={}
+    getRequet(miRequest)
+    upload_file(miRequest)
+    insertDB(BASE,"update productos set image = '{}' where id = {};".format(miRequest.get('file_name_new'), miRequest.get('id')))
+    return redirect('/onlyfans_admin')
+
+BASE={ 
+    "host":"database-1.cbqsyomsicfl.sa-east-1.rds.amazonaws.com",
+    "user":"admin",
+    "pass":"romasurdo123",
+    "dbname":"Tinos"}

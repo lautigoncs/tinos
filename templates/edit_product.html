@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN - EDITAR PRODUCTO</title>
+</head>
+<body>
+    <form action="/editProductAlg?id={{ producto[0] }}" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre del producto" value="{{ producto[1] }}">
+        <input type="text" name="descripcion" placeholder="Descripción del producto" value="{{ producto[2] }}">
+        <input type="text" name="precio" placeholder="Precio del producto" value="{{ producto[3] }}">
+        <input type="text" name="id" value="{{ producto[0] }}" hidden>
+        <input type="submit" value="Editar producto">
+    </form>
+    <form action="updatePhoto" method="POST">
+        <img src="{{ producto[4] }}" alt="{{ producto[1] }}">
+        <input type="file" name="imagen" accept="image/*">
+        <input type="text" name="id" value="{{ producto[0] }}" hidden>
+        <input type="submit" value="Subir imagen">
+    </form>
+</body>
+</html>

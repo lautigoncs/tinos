@@ -37,6 +37,18 @@ def route(app):
     def deleteProduct():
         return deleteProductAlg(request)
 
+    @app.route("/editProduct", methods =["GET", "POST"])
+    def editProduct():
+        return editProductPage(request)
+
+    @app.route("/editProductAlg", methods =["GET", "POST"])
+    def editProductAlg():
+        return editProductLog(request)
+    
+    @app.route("/updatePhoto", methods =["GET", "POST"])
+    def updatePhotoPag():
+        return updatePhoto(request)
+
     @app.route('/<name>')
     def noEncontrada(name):
         return notFound(name)
